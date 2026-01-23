@@ -6,8 +6,11 @@ class $modify(MyPlayLayer, PlayLayer) {
 		int64_t m_buttonHeight = geode::Mod::get()->getSettingValue<int64_t>("button-height");
 		double m_buttonSize = geode::Mod::get()->getSettingValue<double>("button-size");
 		int64_t m_buttonOpacity = geode::Mod::get()->getSettingValue<int64_t>("button-opacity");
+		bool m_onlyRetryIfDoubleclicked = geode::Mod::get()->getSettingValue<bool>("only-retry-if-doubleclicked");
 
 		cocos2d::CCSize m_winSize = cocos2d::CCDirector::get()->getWinSize();
+
+		int64_t m_lastButtonClick = 0;
 	};
 
 	bool init(GJGameLevel *level, bool useReplay, bool dontCreateObjects) {
@@ -41,6 +44,17 @@ class $modify(MyPlayLayer, PlayLayer) {
 	};
 
 	void onRetryButton(CCObject *) {
-		this->resetLevel();
+		if (m_fields->m_onlyRetryIfDoubleclicked) {
+			auto currentTimestamp = duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+
+			if (m_fields->m_lastButtonClick + 500 > currentTimestamp) {
+				this->resetLevel();
+				m_fields->m_lastButtonClick = 0;
+			} else {
+				m_fields->m_lastButtonClick = currentTimestamp;
+			}
+		} else {
+			this->resetLevel();
+		}
 	};
 };

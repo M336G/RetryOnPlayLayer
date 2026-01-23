@@ -5,7 +5,7 @@
 	},
 	"id": "m336.retry-on-play-layer",
 	"name": "Retry On Play Layer",
-	"version": "v1.0.0",
+	"version": "v1.1.0",
 	"developer": "M336",
 	"description": "Adds a Retry Button to the Play Layer!",
 	"tags": [
@@ -25,6 +25,10 @@
 		"geode.node-ids": ">=v1.20.0"
 	},
 	"settings": {
+    	"button-visual-settings-title": {
+      		"type": "title",
+      		"name": "Button visual settings"
+    	},
 		"button-width": {
 			"name": "Button width",
 			"description": "The button's position on the X-axis",
@@ -68,6 +72,17 @@
 			"control": {
 				"slider": true
 			}
+		},
+
+    	"other-button-settings-title": {
+      		"type": "title",
+      		"name": "Other button settings"
+    	},
+		"only-retry-if-doubleclicked": {
+			"name": "Only retry if doubleclicked",
+			"description": "You will need to click the button twice (in less than 0.5s) in order to retry",
+			"type": "bool",
+			"default": false
 		}
 	}
 }
