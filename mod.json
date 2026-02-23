@@ -23,7 +23,7 @@
 		"url": "https://github.com/M336G/RetryOnPlayLayer/issues"
 	},
 	"dependencies": {
-		"geode.node-ids": ">=v1.20.0"
+		"geode.node-ids": ">=v1.23.0"
 	},
 	"settings": {
     	"button-visual-settings-title": {
