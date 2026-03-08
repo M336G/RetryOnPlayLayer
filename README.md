@@ -1,7 +1,7 @@
 # Retry On Play Layer
-Adds a <cb>Retry Button</c> to the <cb>Play Layer</c>!
+Adds a <cg>Retry Button</c> when you <cg>play a level</c>, of which you can customize <cg>the position</c>, <cg>the size</c> and even <cg>the opacity</c>!
 
-Customize it further by setting <cb>its position</c>, <cb>its size</c> and even <cb>its opacity</c>!
+You may also make the retry button require a <cg>double click</c> in a specified <cg>time window</c> in the <cg>mod's settings</c>!
 
 ----------
 ### Want to help?

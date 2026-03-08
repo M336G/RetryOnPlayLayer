@@ -1,3 +1,8 @@
+# 1.2.0
+- Added the "Doubleclick delay" option
+- Clarified settings and their description
+- Some optimizations
+
 # 1.1.2
 - Version bump Geode to v5.0.0
 - Temporarily removed suggested mods

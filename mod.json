@@ -1,12 +1,12 @@
 {
-	"geode": "5.0.0",
+	"geode": "5.3.0",
 	"gd": {
 		"android": "2.2081",
 		"ios": "2.2081"
 	},
 	"id": "m336.retry-on-play-layer",
 	"name": "Retry On Play Layer",
-	"version": "v1.1.2",
+	"version": "v1.2.0",
 	"developer": "M336",
 	"description": "Adds a Retry Button to the Play Layer!",
 	"tags": [
@@ -22,17 +22,14 @@
 		"info": "Having a problem with the mod? Report the issue on the GitHub repository",
 		"url": "https://github.com/M336G/RetryOnPlayLayer/issues"
 	},
-	"dependencies": {
-		"geode.node-ids": ">=v1.20.0"
-	},
 	"settings": {
-    	"button-visual-settings-title": {
-      		"type": "title",
-      		"name": "Button visual settings"
+    	"display-settings": {
+			"name": "Display Settings",
+      		"type": "title"
     	},
 		"button-width": {
-			"name": "Button width",
-			"description": "The button's position on the X-axis",
+			"name": "X-Axis Offset",
+			"description": "Modify the retry button's position horizontally",
 			"type": "int",
 			"default": 260,
 			"min": -1000,
@@ -42,8 +39,8 @@
 			}
 		},
 		"button-height": {
-			"name": "Button height",
-			"description": "The button's position on the Y-axis",
+			"name": "Y-Axis Offset",
+			"description": "Modify the retry button's position vertically",
 			"type": "int",
 			"default": 120,
 			"min": -1000,
@@ -53,8 +50,8 @@
 			}
 		},
 		"button-size": {
-			"name": "Button size",
-			"description": "The size in which the button will be displayed on the screen",
+			"name": "Size",
+			"description": "Scale the retry button's position up or down",
 			"type": "float",
 			"default": 0.5,
 			"min": 0,
@@ -64,8 +61,8 @@
 			}
 		},
 		"button-opacity": {
-			"name": "Button opacity",
-			"description": "The opacity in which the button will be displayed on the screen",
+      		"name": "Opacity",
+      		"description": "Make the retry button more or less transparent",
 			"type": "int",
 			"default": 50,
 			"min": 0,
@@ -75,15 +72,27 @@
 			}
 		},
 
-    	"other-button-settings-title": {
-      		"type": "title",
-      		"name": "Other button settings"
+    	"other-settings": {
+			"name": "Button Settings",
+      		"type": "title"
     	},
 		"only-retry-if-doubleclicked": {
-			"name": "Only retry if doubleclicked",
-			"description": "You will need to click the button twice (in less than 0.5s) in order to retry",
+			"name": "Only Retry If Doubleclicked",
+			"description": "Click the button twice (in less than the specified delay) in order to retry",
 			"type": "bool",
 			"default": false
+		},
+		"only-retry-if-doubleclicked-delay": {
+			"name": "Doubleclick Delay",
+			"description": "Delay in which you will have to click twice in order to retry (in milliseconds)",
+			"type": "int",
+			"default": 500,
+			"min": 100,
+			"max": 1000,
+			"control": {
+				"slider": true
+			},
+			"enable-if": "only-retry-if-doubleclicked"
 		}
 	}
 }
