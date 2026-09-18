@@ -1,5 +1,5 @@
 {
-	"geode": "5.3.0",
+	"geode": "5.10.1",
 	"gd": {
 		"android": "2.2081",
 		"ios": "2.2081"
@@ -16,6 +16,7 @@
 		"customization"
 	],
 	"links": {
+		"community": "https://discord.gg/adbqkyvbZa",
 		"source": "https://github.com/M336G/RetryOnPlayLayer"
 	},
 	"issues": {
