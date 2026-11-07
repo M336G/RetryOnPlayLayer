@@ -10,7 +10,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 set(GEODE_PACKAGE_ZSTD ON)
 
-project(RetryOnPlayLayer VERSION 1.2.0)
+project(RetryOnPlayLayer VERSION 1.2.1)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 

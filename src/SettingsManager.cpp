@@ -1,4 +1,4 @@
-#include "SettingsManager.h"
+#include "SettingsManager.hpp"
 
 using namespace geode::prelude;
 

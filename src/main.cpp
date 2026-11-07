@@ -1,5 +1,5 @@
 #include <Geode/modify/PlayLayer.hpp>
-#include "SettingsManager.h"
+#include "SettingsManager.hpp"
 
 using namespace geode::prelude;
 
@@ -8,15 +8,15 @@ class $modify(MyPlayLayer, PlayLayer) {
 		long long m_lastButtonClick = 0;
 	};
 
-	bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
-		if (!PlayLayer::init(level, useReplay, dontCreateObjects))
+	bool init(GJGameLevel *level, bool dontCreateObjects) {
+		if (!PlayLayer::init(level, dontCreateObjects))
 			return false;
 
         if (SettingsManager::Display.isVisible()) {
-            auto* retryButtonSprite = CCSprite::createWithSpriteFrameName("GJ_replayBtn_001.png");
+            auto *retryButtonSprite = CCSprite::createWithSpriteFrameName("GJ_replayBtn_001.png");
             retryButtonSprite->setScale(SettingsManager::Display.size);
 
-            auto* retryButton = CCMenuItemSpriteExtra::create(
+            auto *retryButton = CCMenuItemSpriteExtra::create(
                 retryButtonSprite,
                 this,
                 menu_selector(MyPlayLayer::onRetryButton)
@@ -24,7 +24,7 @@ class $modify(MyPlayLayer, PlayLayer) {
             retryButton->setID("retry-button"_spr);
             retryButton->setOpacity(SettingsManager::Display.opacity);
 
-            auto* retryButtonMenu = CCMenu::create();
+            auto *retryButtonMenu = CCMenu::create();
             retryButtonMenu->setID("retry-button-menu"_spr);
             retryButtonMenu->setPosition(SettingsManager::Display.getPosition());
 
@@ -35,7 +35,7 @@ class $modify(MyPlayLayer, PlayLayer) {
 		return true;
 	};
 
-	void onRetryButton(CCObject*) {
+	void onRetryButton(CCObject *) {
 		if (SettingsManager::Other.onlyRetryIfDoubleclicked) {
 			auto currentTimestamp = duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 

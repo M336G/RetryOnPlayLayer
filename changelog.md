@@ -1,3 +1,6 @@
+# 1.2.1
+- Ported the mod to 2.2091
+
 # 1.2.0
 - Added the "Doubleclick delay" option
 - Clarified settings and their description
